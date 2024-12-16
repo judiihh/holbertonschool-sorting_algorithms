@@ -15,6 +15,7 @@ void swap(int *array, size_t a, size_t b, size_t size)
 
 		array[a] = array[b];
 		array[b] = temp;
+
 		print_array(array, size);
 	}
 }
@@ -54,9 +55,11 @@ size_t lomuto_partition(int *array, size_t low, size_t high, size_t size)
  */
 void quick_sort_recursive(int *array, size_t low, size_t high, size_t size)
 {
+	size_t pivot;
+
 	if (low < high)
 	{
-		size_t pivot = lomuto_partition(array, low, high, size);
+		pivot = lomuto_partition(array, low, high, size);
 
 		if (pivot > 0 && pivot > low)
 			quick_sort_recursive(array, low, pivot - 1, size);
