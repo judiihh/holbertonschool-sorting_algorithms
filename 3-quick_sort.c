@@ -12,10 +12,8 @@ void swap(int *array, size_t a, size_t b, size_t size)
 	if (a != b)
 	{
 		int temp = array[a];
-
 		array[a] = array[b];
 		array[b] = temp;
-
 		print_array(array, size);
 	}
 }
@@ -62,9 +60,14 @@ void quick_sort_recursive(int *array, size_t low, size_t high, size_t size)
 		pivot = lomuto_partition(array, low, high, size);
 
 		if (pivot > 0 && pivot > low)
+		{
 			quick_sort_recursive(array, low, pivot - 1, size);
+		}
+
 		if (pivot + 1 < high)
+		{
 			quick_sort_recursive(array, pivot + 1, high, size);
+		}
 	}
 }
 
